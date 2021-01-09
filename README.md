@@ -13,6 +13,5 @@ I'm familiar with Python programming for machine learning. With that said, I rea
 
 I'm looking forward to learning lot's of new content in this class and would be happy to learn new technologies.
 
-Thanks,
-Fabian Reginold
+Thank You.
 

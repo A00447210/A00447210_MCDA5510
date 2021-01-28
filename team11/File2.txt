@@ -1,8 +1,13 @@
-
 #A00445443
 
 Public int mod(int a, int b) 
 {
    return a%b;
+}
 
+#A00442700
+
+Public int division (int a, int b) 
+{
+   return a/b;
 }

@@ -15,3 +15,14 @@ I'm looking forward to learning lot's of new content in this class and would be 
 
 Thank You.
 
+
+Team 11
+Pragati Chaturvedi(A00445443)
+Nikitha Medisetty (A00442700)
+Fabian Reginold(A00447210)
+Features updated:
+1) Added multiplication function in File1.txt
+2) Added min math function in File2.txt
+3) Added pow function in File 3.txt
+
+While merging, we sat together and resolved our conflicts together and pushed it into the master branch.

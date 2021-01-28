@@ -1,6 +1,6 @@
 
 
-#. A00447210
+# A00447210
 
 public int pow(int a , int b)
 {

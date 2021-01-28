@@ -1,6 +1,8 @@
-#A00447210
 
-public int min-math()
+#A00445443
+
+Public int mod(int a, int b) 
 {
-	return min-math.max()
+   return a%b;
+
 }

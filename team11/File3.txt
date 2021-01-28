@@ -1,8 +1,7 @@
 
-A00447210
+#A00445443
 
-public int pow(int a , int b)
+Public int mathAvg (int a, int b) 
 {
-return pow-Math.Pow()
-
+   return Math.avg(a,b);
 }

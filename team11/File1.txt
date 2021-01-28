@@ -1,7 +1,8 @@
 
-#A00447210
+#A00445443
 
-public int multiplication (int a, int b)
+Public int subtraction(int a, int b) 
 {
-	return a*b;
+   return a-b;
 }
+

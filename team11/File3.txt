@@ -1,6 +1,17 @@
+
+
+#. A00447210
+
+public int pow(int a , int b)
+{
+return pow-Math.Pow()
+
+}
+
 #A00445443
 
 Public int mathAvg (int a, int b) 
+
 {
    return Math.avg(a,b);
 }

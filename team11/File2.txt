@@ -4,5 +4,3 @@ public int min-math()
 {
 	return min-math.max()
 }
-
-THE END OF THE WORLD

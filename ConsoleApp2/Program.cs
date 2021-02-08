@@ -20,14 +20,10 @@ namespace ConsoleApp2
                {
                     var watch = new System.Diagnostics.Stopwatch();
                     watch.Start();
-            //SimpleCSVParser parser = new SimpleCSVParser();
-            //parser.parse(@"\\Mac\Home\Documents\GitHub\MCDA5510_Assignments\Assignment1\Assignment1\sampleFile.csv");
                     DirWalker fw = new DirWalker();
                     fw.walk(@"\\Mac\Home\Downloads\MCDA5510_Assignments\MCDA5510_Assignments\Sample Data");
-
                     watch.Stop();
-            //Console.WriteLine(stopwatch.ElapsedMilliseconds.ToString());
-            var log = OpenStream(@"\\Mac\Home\Downloads\output2.txt");
+                    var log = OpenStream(@"\\Mac\Home\Downloads\output2.txt");
                     log.WriteLine("Number of good rows"+finalgoodrow);
                     log.WriteLine("Number of bad rows" + badrow);
                     log.WriteLine($"Execution Time: {watch.ElapsedMilliseconds} ms");
@@ -60,32 +56,32 @@ namespace ConsoleApp2
 
                             foreach (string field in fields)
                         {
-                            //to eliminate headers
+                            //to skip headers
                             if (whilecount == 0)
                             {
                                 whilecount = whilecount + 1;
-                                header_length = fields.Length;
+                                header_length = fields.Length;//take a note of the header length which will be useful later
                                 continue;
                             }
-
+                            //check if the value of field is empty
                             if (String.IsNullOrEmpty(field))
                             {
                                 badrow = badrow + 1;
                                 //Console.WriteLine("Bad one" + field);
-                                flag = 1;
-                                break;
+                                //flag = 1; //Initially i thought to use flag concept, but not relvant. This line can be commented as its not used
+                                break;//immedietely break to save computational speed
                             }
                             else 
                             {
                                 goodrow = goodrow + 1;
-                                
+                                //keep a count of the good column values. Please dont get confused with good row. Here goodrow means good columns count
                                 //Console.WriteLine(goodrow + "good row count");
                             }
 
                         }
                         //these are the good rows
                         
-  
+                        //check if all the columns are parsed which is equal to the column header length
                         if (goodrow == header_length)
                         {
                             //Console.WriteLine(fields.ToArray());
@@ -96,13 +92,13 @@ namespace ConsoleApp2
                             }
                             //Console.WriteLine();
                             sw.WriteLine();
-                            finalgoodrow = finalgoodrow + 1;
+                            finalgoodrow = finalgoodrow + 1;//here i'm calculating the nubmer of good rows
 
                         }
                         
                         
                         goodrow = 0;
-                        
+                        //this is the good column counter for each row which needs to be reset. My goodrow counter is above mentioned as finalgoodrow
 
                     }
                         
@@ -119,6 +115,9 @@ namespace ConsoleApp2
             }
 
         }
+
+
+        //Streamwriter to append data into csv
         static StreamWriter OpenStream(string path)
         {
             if (path is null)
@@ -174,6 +173,8 @@ namespace ConsoleApp2
         }
     }
 
+
+    //this is the class to traverse through each directory
     public class DirWalker
     {
 
@@ -202,9 +203,9 @@ namespace ConsoleApp2
                 {
                     if (filepath.Contains(".csv") == true)
                     {
-                        //Console.WriteLine("File:" + filepath + "\n");
+ 
                         SimpleCSVParser parser = new SimpleCSVParser();
-                        //parser.parse(@"\\Mac\Home\Downloads\MCDA5510_Assignments\MCDA5510_Assignments\Assignment1\Assignment1\sampleFile.csv");
+           
                         parser.parse(filepath);
                     }
 

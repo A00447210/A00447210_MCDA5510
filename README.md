@@ -27,3 +27,8 @@ Features updated:
 3) Added pow function in File 3.txt
 
 While merging, we sat together and resolved our conflicts together and pushed it into the master branch.
+
+
+
+ASSIGNMENT 1
+Please find my assignment in the branch Assignment01. Thanks

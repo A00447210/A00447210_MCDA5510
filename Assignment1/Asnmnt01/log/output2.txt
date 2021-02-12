@@ -1,3 +1,3 @@
-Number of good rows194723
-Number of bad rows88186
-Execution Time: 126105 ms
+Number of good rows201075
+Number of bad rows81832
+Execution Time: 53917 ms

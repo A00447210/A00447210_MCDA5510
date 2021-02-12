@@ -53,13 +53,18 @@ namespace Asnmnt01
                         foreach (string field in result)
                         {
                             //main login is to check if each field is empty or has invertd commas  or check if they have NON ASCII Characters
-                            if (String.IsNullOrEmpty(field) == true || field=="\"\"" || Regex.IsMatch(field, @".*[^\u0000-\u007F].*") == true)
+                            //if (String.IsNullOrEmpty(field) == true || field=="\"\"" || Regex.IsMatch(field, @".*[^\u0000-\u007F].*") == true)
+                            if (String.IsNullOrEmpty(field) == true || field == "\"\"" )
                             {
                                 badrow = badrow + 1;
                                 //Console.WriteLine("Bad one" + lines);
                                 flag = 1;
                    
                                 break;//immedietely break to save computational speed
+                            }
+                            else
+                            {
+                                goodrow = goodrow + 1;
                             }
            
           
@@ -69,7 +74,7 @@ namespace Asnmnt01
 
                         //check if all the columns are parsed and if flag is zero, they are never flagged and are good rows
                       
-                        if (flag == 0)
+                        if (goodrow==header_length)
                         {
                             //Console.WriteLine(fields.ToArray());
 
@@ -81,7 +86,7 @@ namespace Asnmnt01
                         }
 
 
-                        //goodrow = 0;
+                        goodrow = 0;
                         
                         //this is the good column counter for each row which needs to be reset. My goodrow counter is above mentioned as finalgoodrow
 

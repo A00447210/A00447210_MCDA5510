@@ -25,10 +25,13 @@ namespace InClassDemo
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            
-            services.AddDbContext<CustomerContext>(options => options.UseInMemoryDatabase("Customer"));
+            services.AddDbContext<Models._5510Context>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("myDbConn")));
+
+            // services.AddDbContext<CustomerContext>(options => options.UseInMemoryDatabase("Customer"));
         }
 
+        
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {

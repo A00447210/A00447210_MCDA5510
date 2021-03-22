@@ -1,4 +1,4 @@
-﻿@model IEnumerable<InClassDemo.Models.Customer>
+﻿@model IEnumerable<InClassDemo.Models.Customers>
 
 @{
     ViewData["Title"] = "Index";
@@ -37,7 +37,7 @@
                 @Html.DisplayNameFor(model => model.Phone)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Email)
+                @Html.DisplayNameFor(model => model.Emailaddress)
             </th>
             <th></th>
         </tr>
@@ -70,7 +70,7 @@
                 @Html.DisplayFor(modelItem => item.Phone)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Email)
+                @Html.DisplayFor(modelItem => item.Emailaddress)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
